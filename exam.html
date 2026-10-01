@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hot Examora — Exam</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brand-tick"></span>
+    <span class="brand-mark">Hot Examora</span>
+  </a>
+  <nav>
+    <span id="student-name" style="color: var(--paper-dim); font-size: 13.5px;"></span>
+  </nav>
+</header>
+
+<main class="top-align">
+  <div class="exam-shell">
+
+    <div class="exam-head">
+      <div>
+        <h2>English usage — timed exam</h2>
+        <p class="exam-progress" id="exam-progress">Loading questions…</p>
+      </div>
+      <div class="timer-ring" id="timer-ring" style="--pct:100">
+        <span id="timer-text">--:--</span>
+      </div>
+    </div>
+
+    <div class="exam-grid" id="exam-grid" hidden>
+      <div>
+        <div class="question-card">
+          <p class="question-number" id="question-number">Question 1</p>
+          <p class="question-text" id="question-text"></p>
+          <div class="choices" id="choices"></div>
+
+          <div class="exam-controls">
+            <div class="nav-group">
+              <button class="btn btn-ghost btn-sm" id="prev-btn">Previous</button>
+              <span class="qnum-chip" id="qnum-chip">1</span>
+              <button class="btn btn-ghost btn-sm" id="next-btn">Next</button>
+            </div>
+            <button class="btn btn-ghost btn-sm" id="mark-btn">Mark</button>
+          </div>
+        </div>
+
+        <button class="submit-bar" id="submit-btn">Submit exam</button>
+      </div>
+
+      <aside class="side-panel">
+        <h3>Marked questions</h3>
+        <div class="mark-list" id="mark-list">
+          <p class="mark-empty">Nothing marked yet.</p>
+        </div>
+
+        <h3 style="margin-top: 22px;">Jump to question</h3>
+        <div class="jump-grid" id="jump-grid"></div>
+      </aside>
+    </div>
+
+  </div>
+</main>
+
+<footer class="foot-note">answers are saved as you go, even if you refresh this page</footer>
+
+<script src="js/storage.js"></script>
+<script src="js/exam.js"></script>
+</body>
+</html>

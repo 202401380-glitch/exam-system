@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hot Examora — Sign in</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-tick"></span>
+      <span class="brand-mark">Hot Examora</span>
+    </a>
+    <nav>
+      <a href="results.html">All results</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <p class="card-eyebrow">Step 2 of 2</p>
+      <h1>Sign in</h1>
+      <p class="subhead">Use the email and password you registered with to begin the exam.</p>
+
+      <div id="banner-slot"></div>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Your password" autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+
+      <p class="form-foot">New here? <a href="index.html">Create an exam pass</a></p>
+    </div>
+  </main>
+
+  <footer class="foot-note">stored locally in this browser · no server involved</footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

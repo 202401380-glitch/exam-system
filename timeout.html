@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hot Examora — Time's up</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brand-tick"></span>
+    <span class="brand-mark">Hot Examora</span>
+  </a>
+  <nav>
+    <a href="results.html">All results</a>
+  </nav>
+</header>
+
+<main>
+  <div class="card outcome-card" id="outcome-card" hidden>
+    <div class="outcome-icon late">⏱</div>
+    <p class="card-eyebrow">Time's up</p>
+    <h1 id="greeting">Time's up</h1>
+    <p class="subhead" id="subline">
+      The exam clock ran out before you submitted. Your answers up to that
+      point have been saved.
+    </p>
+
+    <a class="btn btn-ghost" href="index.html">Back to home</a>
+  </div>
+</main>
+
+<footer class="foot-note">stored locally in this browser · no server involved</footer>
+
+<script src="js/storage.js"></script>
+<script>
+  const raw = sessionStorage.getItem("cc_last_result");
+  const email = Session.get();
+  let result = raw ? JSON.parse(raw) : null;
+
+  if (!result && email) {
+    result = Results.latestForEmail(email);
+  }
+
+  if (!result || result.status !== "timeout") {
+    window.location.replace(email ? "login.html" : "index.html");
+  } else {
+    document.getElementById("outcome-card").hidden = false;
+    document.getElementById(
+      "greeting"
+    ).textContent = `Time's up, ${result.firstName} ${result.lastName}.`;
+  }
+</script>
+</body>
+</html>
